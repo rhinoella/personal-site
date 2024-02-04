@@ -1,12 +1,14 @@
 import { Header } from "./components/Header";
 import { Hero } from "./components/Hero";
+import { Skills } from "./components/Skills";
 
 function App() {
   return (
-    <main className="bg-background">
+    <main>
       <Header />
-      <div className="h-screen max-w-[1440px] mx-auto text-white">
+      <div className="pt-36 max-w-[1440px] mx-auto text-white">
         <Hero />
+        <Skills />
       </div>
     </main>
   );
