@@ -106,7 +106,7 @@ export const Skills = () => {
     target.querySelector<HTMLDivElement>(`.${target.id}`)!.style.transform =
       `translateX(20rem)`;
 
-    Array.from(skillRow.children).forEach((skill, index) => {
+    Array.from(skillRow.children).forEach((skill) => {
       skill.classList.replace("w-52", "w-1/2");
       skill.classList.replace("h-[26rem]", "h-32");
       let titleElement = skill.querySelector<HTMLParagraphElement>(".title")!;
