@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 225.91 145.56">
+  <defs>
+    <style>
+      .cls-1 {
+        fill: none;
+        stroke: #f1f2f2;
+        stroke-miterlimit: 10;
+        stroke-width: 2px;
+      }
+    </style>
+  </defs>
+  <circle class="cls-1" cx="211.82" cy="126.17" r="13.08"/>
+  <circle class="cls-1" cx="211.82" cy="21.05" r="13.08"/>
+  <rect class="cls-1" x="1" y="1" width="158.29" height="143.56" rx="20.84" ry="20.84"/>
+  <path class="cls-1" d="m198.74,126.17h-4.12c-4.3,0-7.78-3.48-7.78-7.78v-10.6c0-4.3-3.48-7.78-7.78-7.78h-19.77"/>
+  <path class="cls-1" d="m198.74,21.05h-4.25c-4.23,0-7.65,3.43-7.65,7.65v10.86c0,4.23-3.43,7.65-7.65,7.65h-19.9"/>
+  <circle class="cls-1" cx="211.82" cy="73.61" r="13.08"/>
+  <line class="cls-1" x1="198.74" y1="73.61" x2="159.29" y2="73.61"/>
+  <path class="cls-1" d="m18.79,34.13v-8.91c0-4.55,3.69-8.24,8.24-8.24h9.55"/>
+  <path class="cls-1" d="m145.83,113.09v8.91c0,4.55-3.69,8.24-8.24,8.24h-9.55"/>
+</svg>

@@ -9,7 +9,7 @@ export default {
   ],
   theme: {
     fontFamily: {
-      'sans': ['ui-sans-serif', 'system-ui', ...defaultTheme.fontFamily.sans],
+      'sans': [ 'Nunito', 'ui-sans-serif', 'system-ui', ...defaultTheme.fontFamily.sans],
       'serif': ['ui-serif', 'Georgia', ...defaultTheme.fontFamily.serif],
       'mono-numbers': ['IBM Plex Mono', 'ui-monospace', 'SFMono-Regular', ...defaultTheme.fontFamily.mono],
       'mono-text': ['Roboto Mono', 'ui-monospace', 'SFMono-Regular', ...defaultTheme.fontFamily.mono],
@@ -23,7 +23,13 @@ export default {
       transitionProperty: {
         'width': 'width',
         'height': 'height',
-    },
+      },
+      backgroundImage: {
+        "gradientImage": "url('./src/assets/gradient.png')"
+      },
+      screens: {
+        '3xl': '1800px',
+      }
     },
   },
   plugins: [],
