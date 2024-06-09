@@ -50,6 +50,10 @@ const experienceData = [
         and .NET API, providing the foundations for an advanced learning
         platform.
       </li>,
+      <li>
+        Integrated the API with a GPT agent to perform handwriting recognition
+        and mathematical operations.
+      </li>,
     ],
   },
   {

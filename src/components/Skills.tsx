@@ -242,7 +242,6 @@ export const Skills = () => {
               width={16}
               xmlns="http://www.w3.org/2000/svg"
               fill="#000000"
-              transform="rotate(180)"
             >
               <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
               <g
@@ -257,7 +256,7 @@ export const Skills = () => {
                   stroke="#ffffff"
                   stroke-width="2"
                   points="4 16 16 16 16 4"
-                  transform="rotate(180 10 10)"
+                  transform="rotate(10 10)"
                 ></polyline>{" "}
               </g>
             </svg>
