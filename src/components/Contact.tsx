@@ -24,7 +24,7 @@ export const Contact = () => {
           </div>
           <div className="flex flex-row gap-4 xl:gap-8">
             <a
-              href="https://github.com/rhinoella"
+              href="https://www.linkedin.com/in/noella-spitz/"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -41,7 +41,7 @@ export const Contact = () => {
               </svg>
             </a>
             <a
-              href="https://www.linkedin.com/in/noella-spitz/"
+              href="https://github.com/rhinoella"
               target="_blank"
               rel="noopener noreferrer"
             >
