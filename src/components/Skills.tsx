@@ -109,7 +109,8 @@ export const Skills = () => {
     }*/
   }, [isMobile]);
 
-  const expandTarget = (target: HTMLElement) => {
+  const expand = (event: BaseSyntheticEvent) => {
+    let target = event.currentTarget as HTMLElement;
     let skillRow = target.parentElement!;
 
     setTimeout(() => {
@@ -134,11 +135,8 @@ export const Skills = () => {
     });
   };
 
-  const expand = (event: BaseSyntheticEvent) => {
-    expandTarget(event.currentTarget);
-  };
-
-  const shrinkTarget = (target: HTMLElement) => {
+  const shrink = (event: BaseSyntheticEvent) => {
+    let target = event.currentTarget as HTMLElement;
     let skillRow = target.parentElement!;
 
     setTimeout(() => {
@@ -160,8 +158,17 @@ export const Skills = () => {
     });
   };
 
-  const shrink = (event: BaseSyntheticEvent) => {
-    shrinkTarget(event.currentTarget);
+  const handleClick = (event: BaseSyntheticEvent) => {
+    let target = event.currentTarget as HTMLElement;
+
+    if (target.classList.contains("h-32")) {
+      target.classList.replace("h-32", "h-[44rem]");
+      target.querySelector<HTMLDivElement>(".corner")!.style.transform =
+        `translateY(36rem)`;
+    } else {
+      target.classList.replace("h-[44rem]", "h-32");
+      target.querySelector<HTMLDivElement>(".corner")!.style.transform = "";
+    }
   };
 
   const listDesktop = skillData.map((skill: SkillMap) => {
@@ -217,13 +224,45 @@ export const Skills = () => {
       <div
         key={skill.id}
         id={skill.id}
+        onClick={handleClick}
         data-index={skill.index}
         className={`snap-center skill transition-height ease-out duration-700 overflow-hidden w-full
-                    p-10 bg-indigo-950 text-white rounded-3xl shadow-xl h-32 shadow-black active:h-[44rem]`}
+                    p-10 bg-indigo-950 text-white rounded-3xl shadow-xl h-32 shadow-black`}
       >
-        <p className="title h-20 relative z-40 xl:w-2/3 font-mono-text bg-indigo-950 pt-1 overflow-hidden whitespace-nowrap">
-          {skill.title}
-        </p>
+        <div className="flex flex-col h-20">
+          <p className="title relative z-40 xl:w-2/3 font-mono-text bg-indigo-950 pt-1 overflow-hidden whitespace-nowrap">
+            {skill.title}
+          </p>
+          <div
+            className="corner block place-self-end transition-transform 
+          duration-500 ease-out"
+          >
+            <svg
+              viewBox="0 0 24 24"
+              width={16}
+              xmlns="http://www.w3.org/2000/svg"
+              fill="#000000"
+              transform="rotate(180)"
+            >
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g
+                id="SVGRepo_tracerCarrier"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></g>
+              <g id="SVGRepo_iconCarrier">
+                {" "}
+                <polyline
+                  fill="none"
+                  stroke="#ffffff"
+                  stroke-width="2"
+                  points="4 16 16 16 16 4"
+                  transform="rotate(180 10 10)"
+                ></polyline>{" "}
+              </g>
+            </svg>
+          </div>
+        </div>
         <div
           className={`${skill.id} min-h-[18rem] flex flex-col gap-8 justify-between 
            transition-transform duration-300`}
@@ -250,7 +289,7 @@ export const Skills = () => {
     <div
       id="skills"
       className="h-full md:h-[55rem] scroll-m-52 mt-48 p-8 md:p-14 w-full bg-gradient-to-b bg-background-darker 
-    rounded-[5rem]"
+     md:rounded-[5rem]"
     >
       <div className="flex flex-row justify-between px-2 md:px-8">
         <h2 className="text-2xl md:text-5xl 3xl:text-6xl font-mono-text pb-2">
