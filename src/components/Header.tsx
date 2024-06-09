@@ -55,13 +55,13 @@ const revealMenu = () => {
 
 const HeaderMobile = () => {
   return (
-    <div className="top-0 absolute w-svw bg-gradient-to-b from-background from-40% to-transparent">
+    <div className="top-0 absolute w-svw bg-gradient-to-b from-background from-40%">
       <div onClick={revealMenu} className="p-10">
         <img src={sandwich} width={40}></img>
       </div>
       <nav
         id="mobileNav"
-        className="hidden w-full flex-col text-white text-lg font-extralight items-center animate-slide-down"
+        className="hidden w-full flex-col text-white text-lg font-extralight items-center animate-slide-down bg-gradient-to-b from-background from-40% h-screen"
       >
         <a
           href="#hero"

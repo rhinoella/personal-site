@@ -25,13 +25,13 @@ const skillData: SkillMap[] = [
     desc: "Passionate about UI/UX design and crafting engaging user experiences. Skilled in fullstack web development.",
     skills: [
       "TypeScript",
-      "React",
+      "C#",
+      "AWS",
       ".NET",
       "SQL",
-      "AWS",
-      "NodeJS",
-      "C#",
       "Fastify",
+      "NodeJS",
+      "React",
     ],
     gradient: "from-sky-500 to-blue-600",
   },
@@ -81,7 +81,7 @@ export const Skills = () => {
     };
 
     window.addEventListener("resize", handleResize);
-
+    /*
     if (isMobile) {
       const expandRow = (entries: IntersectionObserverEntry[]) => {
         entries.forEach((entry) => {
@@ -106,7 +106,7 @@ export const Skills = () => {
       return () => {
         observer.disconnect();
       };
-    }
+    }*/
   }, [isMobile]);
 
   const expandTarget = (target: HTMLElement) => {
@@ -219,7 +219,7 @@ export const Skills = () => {
         id={skill.id}
         data-index={skill.index}
         className={`snap-center skill transition-height ease-out duration-700 overflow-hidden w-full
-                    p-10 bg-indigo-950 text-white rounded-3xl shadow-xl h-32 shadow-black`}
+                    p-10 bg-indigo-950 text-white rounded-3xl shadow-xl h-32 shadow-black active:h-[44rem]`}
       >
         <p className="title h-20 relative z-40 xl:w-2/3 font-mono-text bg-indigo-950 pt-1 overflow-hidden whitespace-nowrap">
           {skill.title}
@@ -234,7 +234,7 @@ export const Skills = () => {
               src={skill.img}
               width={500}
             />
-            <p className={"text-sm font-mono-numbers grow"}>{skill.desc}</p>
+            <p className={"text-base font-mono-numbers grow"}>{skill.desc}</p>
           </div>
           <div className="flex flex-row flex-wrap gap-2 pb-10">
             {skill.skills.map((skillName) =>
@@ -304,7 +304,7 @@ const skillBubble = (props: { skillName: string; gradient: string }) => {
   return (
     <div
       className={`${props.gradient} font-mono-text tracking-wider bg-gradient-to-br text-white 
-      font-medium text-[0.6rem] md:text-[0.7rem] xl:text-sm p-2 md:py-3 px-4 md:px-6 xl:px-10 rounded-xl h-fit text-center xl:min-w-28`}
+      font-medium text-[0.7rem] xl:text-sm p-2 md:py-3 px-4 md:px-6 xl:px-10 rounded-xl h-fit text-center xl:min-w-28`}
     >
       {props.skillName}
     </div>

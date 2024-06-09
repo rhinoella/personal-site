@@ -50,10 +50,6 @@ const experienceData = [
         and .NET API, providing the foundations for an advanced learning
         platform.
       </li>,
-      <li>
-        Integrating GPT-4 for handwriting recognition, language generation and
-        adaptive learning.
-      </li>,
     ],
   },
   {
@@ -131,7 +127,7 @@ export const Experience = () => {
     return (
       <div
         key={experience.title}
-        className="text-sm md:text-xl flex flex-row h-[34rem] mx-auto pl-4"
+        className="text-base md:text-xl flex flex-row h-[40rem] md:h-[34rem] mx-auto pl-4"
       >
         <div className="hidden md:flex pr-10 pt-2 uppercase font-extralight w-48">
           <p>{experience.date}</p>
@@ -155,18 +151,18 @@ export const Experience = () => {
           ></img>
         </motion.div>
         <div className="flex flex-col max-w-lg pl-10 px-6 py-6">
-          <h4 className="text-lg md:text-4xl tracking-wide">
+          <h4 className="text-xl md:text-4xl tracking-wide">
             {experience.title}
           </h4>
           <p className="uppercase font-light text-gray-400">
             {experience.company}
           </p>
-          <div className="flex md:hidden pr-10 pt-2 uppercase font-extralight text-gray-500 w-48">
+          <div className="flex md:hidden pr-10 pt-2 uppercase font-extralight text-gray-500 md:w-48">
             <p>{experience.date}</p>
           </div>
           <ul
             className="flex flex-col gap-4 pt-5 font-mono-text font-extralight 
-          text-gray-100 text-sm md:text-lg tracking-tight"
+          text-gray-100 text-base md:text-lg tracking-tight"
           >
             {experience.desc.map((item, index) => (
               <li key={index}>{item}</li>
@@ -178,7 +174,7 @@ export const Experience = () => {
   });
 
   return (
-    <div id="experience" className="h-max py-72">
+    <div id="experience" className="h-max pb-12 py-72 md:py-72">
       <motion.div
         variants={widthVariants}
         ref={ref}
@@ -186,7 +182,7 @@ export const Experience = () => {
         animate={controls}
         className="whitespace-nowrap text-xl md:text-5xl font-mono-text text-right"
       >
-        <h3 className=" mx-4 md:mx-0 py-4 md:py-8 px-8 md:px-24 bg-gradient-to-r from-violet-900 to-blue-800 rounded-full my-32">
+        <h3 className="text-2xl md:text-4xl mx-4 md:mx-0 py-4 md:py-8 px-8 md:px-24 bg-gradient-to-r from-violet-900 to-blue-800 rounded-full mt-32 mb-10 md:my-32">
           WORK EXPERIENCE
         </h3>
       </motion.div>
