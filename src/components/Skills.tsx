@@ -81,32 +81,6 @@ export const Skills = () => {
     };
 
     window.addEventListener("resize", handleResize);
-    /*
-    if (isMobile) {
-      const expandRow = (entries: IntersectionObserverEntry[]) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            let target = entry.target.parentElement as HTMLElement;
-            target.style.height = "44rem";
-          } else {
-            let target = entry.target.parentElement as HTMLElement;
-            target.style.height = "8rem";
-          }
-        });
-      };
-
-      const observer = new IntersectionObserver(expandRow, {
-        threshold: 1,
-      });
-
-      document.querySelectorAll(".skill > .title").forEach((row) => {
-        observer.observe(row);
-      });
-
-      return () => {
-        observer.disconnect();
-      };
-    }*/
   }, [isMobile]);
 
   const expand = (event: BaseSyntheticEvent) => {
@@ -210,8 +184,11 @@ export const Skills = () => {
             />
           </div>
           <div className="flex flex-row flex-wrap gap-2 xl:gap-4 mx-10 md:w-[30rem] xl:w-[50rem] pb-10">
-            {skill.skills.map((skillName) =>
-              skillBubble({ skillName: skillName, gradient: skill.gradient }),
+            {skill.skills.map((skillName, index) =>
+              skillBubble(
+                { skillName: skillName, gradient: skill.gradient },
+                index,
+              ),
             )}
           </div>
         </div>
@@ -243,20 +220,19 @@ export const Skills = () => {
               xmlns="http://www.w3.org/2000/svg"
               fill="#000000"
             >
-              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_bgCarrier" strokeWidth="0"></g>
               <g
                 id="SVGRepo_tracerCarrier"
-                stroke-linecap="round"
-                stroke-linejoin="round"
+                strokeLinecap="round"
+                strokeLinejoin="round"
               ></g>
               <g id="SVGRepo_iconCarrier">
                 {" "}
                 <polyline
                   fill="none"
                   stroke="#ffffff"
-                  stroke-width="2"
+                  strokeWidth="2"
                   points="4 16 16 16 16 4"
-                  transform="rotate(10 10)"
                 ></polyline>{" "}
               </g>
             </svg>
@@ -275,8 +251,11 @@ export const Skills = () => {
             <p className={"text-base font-mono-numbers grow"}>{skill.desc}</p>
           </div>
           <div className="flex flex-row flex-wrap gap-2 pb-10">
-            {skill.skills.map((skillName) =>
-              skillBubble({ skillName: skillName, gradient: skill.gradient }),
+            {skill.skills.map((skillName, index) =>
+              skillBubble(
+                { skillName: skillName, gradient: skill.gradient },
+                index,
+              ),
             )}
           </div>
         </div>
@@ -338,9 +317,13 @@ export const Skills = () => {
   );
 };
 
-const skillBubble = (props: { skillName: string; gradient: string }) => {
+const skillBubble = (
+  props: { skillName: string; gradient: string },
+  index: number,
+) => {
   return (
     <div
+      key={index}
       className={`${props.gradient} font-mono-text tracking-wider bg-gradient-to-br text-white 
       font-medium text-[0.7rem] xl:text-sm p-2 md:py-3 px-4 md:px-6 xl:px-10 rounded-xl h-fit text-center xl:min-w-28`}
     >

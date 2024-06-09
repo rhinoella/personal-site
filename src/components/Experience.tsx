@@ -9,7 +9,7 @@ const experienceData = [
       "UK Science and Technology Facilities Council \u00A0 | \u00A0 Full time",
     date: "Jul. 2023 - Present",
     desc: [
-      <li>
+      <p>
         Collaborating in a team to develop&nbsp;
         <a
           className="hover:text-pink-600 text-pink-500 underline"
@@ -26,13 +26,13 @@ const experienceData = [
           GudPy
         </a>
         , a Python software for data processing and reduction.
-      </li>,
-      <li>
+      </p>,
+      <p>
         Provides innovative solutions for{" "}
         <b className="text-white">world-leading research</b> in many industries,
         including petroleum processing, pharmaceutical drug discovery, vaccine
         development and planetary science.
-      </li>,
+      </p>,
     ],
   },
   {
@@ -40,20 +40,20 @@ const experienceData = [
     company: `QED Learning \u00A0 | \u00A0 Part time`,
     date: "Jun. 2023 - May 2024",
     desc: [
-      <li>
+      <p>
         Developing augumented reality, phone-application prototypes for an
         EdTech startup, applying C#, Unity3D, CAD and IOS development
         principles.
-      </li>,
-      <li>
+      </p>,
+      <p>
         <b>Lead the design and development</b> of a modular backend architecture
         and .NET API, providing the foundations for an advanced learning
         platform.
-      </li>,
-      <li>
+      </p>,
+      <p>
         Integrated the API with a GPT agent to perform handwriting recognition
         and mathematical operations.
-      </li>,
+      </p>,
     ],
   },
   {
@@ -61,14 +61,14 @@ const experienceData = [
     company: "Freelance",
     date: "Aug. 2020 - Present",
     desc: [
-      <li>
+      <p>
         Dedicated to delivering high-quality, user-friendly and creative
         products whilst maintaining a meticulous <b>attention to detail.</b>
-      </li>,
-      <li>
+      </p>,
+      <p>
         Designs and develops frontend websites for creative portfolios using
         JavaScript, TypeScript, HTML, CSS, Vite, React and Tailwind.
-      </li>,
+      </p>,
     ],
   },
 ];
@@ -169,7 +169,7 @@ export const Experience = () => {
           text-gray-100 text-base md:text-lg tracking-tight"
           >
             {experience.desc.map((item, index) => (
-              <li key={index}>{item}</li>
+              <p key={index}>{item}</p>
             ))}
           </ul>
         </div>
