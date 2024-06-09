@@ -22,7 +22,7 @@ const skillData: SkillMap[] = [
     row: 1,
     title: "Web Development",
     img: webGraphic,
-    desc: "Passionate about UI/UX design and crafting engaging user experiences. Skilled in fullstack web development.",
+    desc: "Passionate about UI/UX design and crafting engaging user experiences. Skilled in fullstack web development and setting up cloud infrastructure.",
     skills: [
       "TypeScript",
       "C#",
