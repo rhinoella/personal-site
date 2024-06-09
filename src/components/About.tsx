@@ -2,35 +2,41 @@ import noellaPixel from "../assets/noellaPixel.png";
 
 export const About = () => {
   return (
-    <section id="about" className="py-32 scroll-m-64">
-      <div className="w-full bg-gradient-to-br from-blue-700 to-indigo-950 gap-20 rounded-3xl p-20 flex flex-row justify-between">
-        <div className="flex flex-col w-5/6 xl:text-2xl font-extralight gap-8">
-          <h3 className="md:text-3xl xl:text-5xl font-bold font-mono-text">
-            Noella Spitz
-          </h3>
-          <div className="flex flex-row gap-2">
-            <svg
-              className="pt-1"
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-            >
-              <path
-                fill="#FFFFFF"
-                d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 14c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z"
-              />
-            </svg>
-            <p className="font-semibold">London, UK</p>
+    <section id="about" className="py-32 -scroll-m-32 md:scroll-m-64">
+      <div className="w-full bg-gradient-to-t md:bg-gradient-to-br from-blue-700 to-background md:to-indigo-950 gap-8 md:gap-20 rounded-3xl p-8 md:p-20 flex flex-col md:flex-row justify-between">
+        <div className="flex flex-col w-5/6 xl:text-2xl font-extralight gap-8 w-full">
+          <div className="flex flex-col justify-between">
+            <h3 className="md:text-3xl xl:text-5xl font-bold font-mono-text">
+              Noella Spitz
+            </h3>
+            <div className="flex flex-row gap-2">
+              <svg
+                className="pt-1"
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  fill="#FFFFFF"
+                  d="M12 0c-4.198 0-8 3.403-8 7.602 0 4.198 3.469 9.21 8 16.398 4.531-7.188 8-12.2 8-16.398 0-4.199-3.801-7.602-8-7.602zm0 14c-3.314 0-6-2.686-6-6s2.686-6 6-6 6 2.686 6 6-2.686 6-6 6z"
+                />
+              </svg>
+              <p className="font-light md:font-semibold">London, UK</p>
+            </div>
           </div>
           <p>
-            A detail-orientated, multi-talented Software Engineer dedicated to
-            delivering quality results and innovative solutions. Possesses over
-            three years of experience in designing, developing and testing
-            user-friendly applications and high-level systems, collaborating
-            with teams and users to deliver first-class results.
+            A detail-orientated, multi-talented, fullstack Software Engineer
+            dedicated to delivering quality results and innovative solutions.
+            <br></br>
+            <br></br>
+            Driven by passion for computers, I'm proficient in backend
+            development (ASP.NET Core, Node.js), frontend development (React,
+            Qt), developing AWS cloud infrastructure, and have a strong skillset
+            of programming languages (C++, C#, JavaScript, TypeScript, Python,
+            Solidity, SQL).
           </p>
-          <div className="flex flex-row md:gap-4 xl:gap-8">
+          <div className="flex flex-row gap-4 xl:gap-8">
             <a
               href="https://github.com/rhinoella"
               target="_blank"
@@ -65,11 +71,16 @@ export const About = () => {
                 />
               </svg>
             </a>
-            <p>noella.spitz@gmail.com</p>
+            <div className="pt-2">
+              <p>noella.spitz@gmail.com</p>
+            </div>
           </div>
         </div>
-        <div className="border-4 border-dashed border-slate-300 rounded-[50%] p-16">
-          <img src={noellaPixel} width={300}></img>
+        <div className="order-first md:order-last">
+          <div className="md:border-4 md:border-dashed border-slate-300 rounded-[50%] p-16 pb-8 md:pb-16">
+            <img src={noellaPixel}></img>
+          </div>
+          <div className="md:hidden w-full border-b-2 border-slate-300"></div>
         </div>
       </div>
     </section>

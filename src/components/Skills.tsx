@@ -1,4 +1,4 @@
-import { BaseSyntheticEvent } from "react";
+import { BaseSyntheticEvent, useEffect, useState } from "react";
 import webGraphic from "../assets/icons/web.svg";
 import desktopGraphic from "../assets/icons/desktop.svg";
 import aiGraphic from "../assets/icons/ai.svg";
@@ -22,15 +22,16 @@ const skillData: SkillMap[] = [
     row: 1,
     title: "Web Development",
     img: webGraphic,
-    desc: "Passionate about UI/UX design and crafting engaging user experiences.",
+    desc: "Passionate about UI/UX design and crafting engaging user experiences. Skilled in fullstack web development.",
     skills: [
-      "HTML",
-      "CSS",
       "TypeScript",
-      "JavaScript",
       "React",
-      "TailwindCSS",
-      "Adobe Illustrator",
+      ".NET",
+      "SQL",
+      "AWS",
+      "NodeJS",
+      "C#",
+      "Fastify",
     ],
     gradient: "from-sky-500 to-blue-600",
   },
@@ -40,8 +41,8 @@ const skillData: SkillMap[] = [
     row: 1,
     title: "Desktop Development",
     img: desktopGraphic,
-    desc: "Experienced in developing advanced, industrially-applied desktop applications.",
-    skills: ["C++", "C#", "Python", "Bash", "CMake", "CI/CD", "Qt"],
+    desc: "Experienced in developing advanced, industrially-applied, scientific desktop applications.",
+    skills: ["C++", "C#", "Python", "Bash", "CMake", "Qt", "CI/CD"],
     gradient: "from-green-600 to-teal-700",
   },
   {
@@ -51,7 +52,7 @@ const skillData: SkillMap[] = [
     title: "Machine Learning",
     img: aiGraphic,
     desc: "Skilled at integrating and developing machine-learning techniques.",
-    skills: ["TensorFlow", "Keras", "Python", "GPT"],
+    skills: ["TensorFlow", "Keras", "GPT", "Python"],
     gradient: "from-orange-600 to-rose-800",
   },
   {
@@ -67,8 +68,48 @@ const skillData: SkillMap[] = [
 ];
 
 export const Skills = () => {
-  const expand = (event: BaseSyntheticEvent) => {
-    let target = event.currentTarget as HTMLElement;
+  const [isMobile, setIsMobile] = useState(window.innerWidth < 640);
+  // Radius, width, height
+  const [circleSizing, setCircleSizing] = useState(["7", "8", "30", "30"]);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsMobile(window.innerWidth < 640);
+      isMobile
+        ? setCircleSizing(["7", "8", "30", "30"])
+        : setCircleSizing(["25", "26", "98", "80"]);
+    };
+
+    window.addEventListener("resize", handleResize);
+
+    if (isMobile) {
+      const expandRow = (entries: IntersectionObserverEntry[]) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            let target = entry.target.parentElement as HTMLElement;
+            target.style.height = "44rem";
+          } else {
+            let target = entry.target.parentElement as HTMLElement;
+            target.style.height = "8rem";
+          }
+        });
+      };
+
+      const observer = new IntersectionObserver(expandRow, {
+        threshold: 1,
+      });
+
+      document.querySelectorAll(".skill > .title").forEach((row) => {
+        observer.observe(row);
+      });
+
+      return () => {
+        observer.disconnect();
+      };
+    }
+  }, [isMobile]);
+
+  const expandTarget = (target: HTMLElement) => {
     let skillRow = target.parentElement!;
 
     setTimeout(() => {
@@ -93,8 +134,11 @@ export const Skills = () => {
     });
   };
 
-  const shrink = (event: BaseSyntheticEvent) => {
-    let target = event.currentTarget as HTMLElement;
+  const expand = (event: BaseSyntheticEvent) => {
+    expandTarget(event.currentTarget);
+  };
+
+  const shrinkTarget = (target: HTMLElement) => {
     let skillRow = target.parentElement!;
 
     setTimeout(() => {
@@ -116,7 +160,11 @@ export const Skills = () => {
     });
   };
 
-  const list = skillData.map((skill: SkillMap) => {
+  const shrink = (event: BaseSyntheticEvent) => {
+    shrinkTarget(event.currentTarget);
+  };
+
+  const listDesktop = skillData.map((skill: SkillMap) => {
     return (
       <div
         key={skill.id}
@@ -164,34 +212,90 @@ export const Skills = () => {
     );
   });
 
+  const listMobile = skillData.map((skill: SkillMap) => {
+    return (
+      <div
+        key={skill.id}
+        id={skill.id}
+        data-index={skill.index}
+        className={`snap-center skill transition-height ease-out duration-700 overflow-hidden w-full
+                    p-10 bg-indigo-950 text-white rounded-3xl shadow-xl h-32 shadow-black`}
+      >
+        <p className="title h-20 relative z-40 xl:w-2/3 font-mono-text bg-indigo-950 pt-1 overflow-hidden whitespace-nowrap">
+          {skill.title}
+        </p>
+        <div
+          className={`${skill.id} min-h-[18rem] flex flex-col gap-8 justify-between 
+           transition-transform duration-300`}
+        >
+          <div className="relative flex flex-col gap-8 pt-5  justify-between">
+            <img
+              className="xl:my-[-4rem] md:h-28 3xl:h-fit"
+              src={skill.img}
+              width={500}
+            />
+            <p className={"text-sm font-mono-numbers grow"}>{skill.desc}</p>
+          </div>
+          <div className="flex flex-row flex-wrap gap-2 pb-10">
+            {skill.skills.map((skillName) =>
+              skillBubble({ skillName: skillName, gradient: skill.gradient }),
+            )}
+          </div>
+        </div>
+      </div>
+    );
+  });
+
   return (
     <div
       id="skills"
-      className="h-[55rem] scroll-m-52 mt-48 p-14 w-full bg-gradient-to-b bg-background-darker 
+      className="h-full md:h-[55rem] scroll-m-52 mt-48 p-8 md:p-14 w-full bg-gradient-to-b bg-background-darker 
     rounded-[5rem]"
     >
-      <div className="flex flex-row justify-between px-8">
-        <h2 className="text-5xl 3xl:text-6xl font-mono-text pb-2">
+      <div className="flex flex-row justify-between px-2 md:px-8">
+        <h2 className="text-2xl md:text-5xl 3xl:text-6xl font-mono-text pb-2">
           <span className="font-extralight">&gt;&gt;</span> SKILLS
         </h2>
-        <div className="flex flex-row">
-          <svg width="98" height="80">
-            <circle cx="40" cy="34" r="25" fill="#990000" />
+        <div className="flex flex-row pt-2 md:pt-0">
+          <svg width={circleSizing[2]} height={circleSizing[3]}>
+            <circle
+              cx={circleSizing[1]}
+              cy={circleSizing[1]}
+              r={circleSizing[0]}
+              fill="#990000"
+            />
           </svg>
-          <svg width="98" height="80">
-            <circle cx="40" cy="34" r="25" fill="#DAA520" />
+          <svg width={circleSizing[2]} height={circleSizing[3]}>
+            <circle
+              cx={circleSizing[1]}
+              cy={circleSizing[1]}
+              r={circleSizing[0]}
+              fill="#DAA520"
+            />
           </svg>
-          <svg width="98" height="80">
-            <circle cx="40" cy="34" r="25" fill="#006400" />
+          <svg width={circleSizing[2]} height={circleSizing[3]}>
+            <circle
+              cx={circleSizing[1]}
+              cy={circleSizing[1]}
+              r={circleSizing[0]}
+              fill="#006400"
+            />
           </svg>
         </div>
       </div>
-      <div id="row-1" className="pt-14 flex flex-row gap-12 px-8">
-        {list.slice(0, 2)}
-      </div>
-      <div id="row-2" className="pt-14 flex flex-row gap-12 px-8">
-        {list.slice(2, 4)}
-      </div>
+      {!isMobile && (
+        <div id="row-1" className="pt-14 flex flex-row gap-12 px-8">
+          {listDesktop.slice(0, 2)}
+        </div>
+      )}
+      {!isMobile && (
+        <div id="row-2" className="pt-14 flex flex-row gap-12 px-8">
+          {listDesktop.slice(2, 4)}
+        </div>
+      )}
+      {isMobile && (
+        <div className="pt-14 flex flex-col gap-6 snap-y"> {listMobile}</div>
+      )}
     </div>
   );
 };
@@ -200,7 +304,7 @@ const skillBubble = (props: { skillName: string; gradient: string }) => {
   return (
     <div
       className={`${props.gradient} font-mono-text tracking-wider bg-gradient-to-br text-white 
-      text-[0.7rem] xl:text-sm py-3 px-6 xl:px-10 rounded-xl h-fit text-center xl:min-w-28`}
+      font-medium text-[0.6rem] md:text-[0.7rem] xl:text-sm p-2 md:py-3 px-4 md:px-6 xl:px-10 rounded-xl h-fit text-center xl:min-w-28`}
     >
       {props.skillName}
     </div>

@@ -8,7 +8,7 @@ function App() {
   return (
     <main className="text-white">
       <Header />
-      <div className="max-w-[1510px] mx-auto px-10">
+      <div className="max-w-[1510px] mx-auto md:px-10 overflow-x-clip">
         <Hero />
         <About />
         <Skills />

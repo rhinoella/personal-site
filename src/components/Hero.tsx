@@ -19,15 +19,15 @@ export const Hero = () => {
       className="relative w-full scroll-m-36 md:w-[1000px] xl:w-[1440px] mx-auto h-min grid"
     >
       <div className="h-full col-start-1 row-start-1">
-        <div className="sticky top-24 z-40 h-screen flex flex-col">
-          <div className="bg-gradient-to-b from-background from-5% h-[22rem]"></div>
+        <div className="sticky top-0 md:top-24 z-40 h-screen flex flex-col">
+          <div className="bg-gradient-to-b from-background from-5% h-64 md:h-[22rem]"></div>
           <div className="h-[calc(theme(space.36))]"></div>
-          <div className="bg-gradient-to-t from-background h-[22rem]"></div>
+          <div className="bg-gradient-to-t from-background h-16 md:h-[22rem]"></div>
           <div className="bg-background grow"></div>
         </div>
       </div>
-      <div className="flex flex-row w-full gap-10 pt-48 col-start-1 row-start-1">
-        <div className="flex flex-col md:text-4xl xl:text-6xl text-[#373446] gap-[2.15rem] items-end font-mono-numbers">
+      <div className="flex flex-row w-full gap-10 pt-72 md:pt-48 col-start-1 row-start-1">
+        <div className="hidden md:flex flex-col text-2xl md:text-4xl xl:text-6xl text-[#373446] gap-2 md:gap-[2.15rem] items-end font-mono-numbers">
           <p>1</p>
           <p>2</p>
           <p>3</p>
@@ -60,7 +60,7 @@ export const Hero = () => {
           <div className="pl-8 py-5 w-full bg-foreground md:h-22 xl:h-28">
             <h1
               className={
-                "font-mono-text md:text-4xl xl:text-7xl w-fit tracking-wide " +
+                "font-mono-text text-2xl md:text-4xl xl:text-7xl w-fit tracking-wide " +
                 caret
               }
             >
@@ -68,7 +68,7 @@ export const Hero = () => {
             </h1>
           </div>
           <div
-            className="md:mt-[22.4rem] xl:mt-[23rem] pl-8 py-6 w-full font-extralight font-mono-text 
+            className="mt-[24rem] md:mt-[22.4rem] xl:mt-[23rem] pl-8 py-6 w-full font-extralight font-mono-text 
             md:text-4xl xl:text-5xl 
             flex flex-col md:gap-[2.15rem] xl:gap-[2.9rem]"
           >
@@ -95,5 +95,3 @@ export const Hero = () => {
     </section>
   );
 };
-
-/**       */

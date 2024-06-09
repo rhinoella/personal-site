@@ -5,13 +5,14 @@ import { useAnimation, useInView, motion } from "framer-motion";
 const experienceData = [
   {
     title: "Scientific Software Developer",
-    company: "UK Science and Technology Facilities Council",
+    company:
+      "UK Science and Technology Facilities Council \u00A0 | \u00A0 Full time",
     date: "Jul. 2023 - Present",
     desc: [
       <li>
         Collaborating in a team to develop&nbsp;
         <a
-          className="hover:text-pink-600 text-pink-500"
+          className="hover:text-pink-600 text-pink-500 underline"
           href="https://github.com/disorderedmaterials/dissolve"
         >
           Dissolve
@@ -19,7 +20,7 @@ const experienceData = [
         , a simulation tool written in C++ for the interrogation of neutron
         scattering data, and{" "}
         <a
-          className="hover:text-pink-600 text-pink-500"
+          className="hover:text-pink-600 text-pink-500 underline"
           href="https://github.com/disorderedmaterials/gudpy"
         >
           GudPy
@@ -35,9 +36,9 @@ const experienceData = [
     ],
   },
   {
-    title: "Junior Software Engineer",
-    company: "QED Learning",
-    date: "Jun. 2023 - Present",
+    title: "Software Engineer",
+    company: `QED Learning \u00A0 | \u00A0 Part time`,
+    date: "Jun. 2023 - May 2024",
     desc: [
       <li>
         Developing augumented reality, phone-application prototypes for an
@@ -45,9 +46,9 @@ const experienceData = [
         principles.
       </li>,
       <li>
-        <b>Leading the design and development</b> of a modular backend
-        architecture and RESTful API that will provide the foundations for an
-        advanced learning platform.
+        <b>Lead the design and development</b> of a modular backend architecture
+        and .NET API, providing the foundations for an advanced learning
+        platform.
       </li>,
       <li>
         Integrating GPT-4 for handwriting recognition, language generation and
@@ -60,10 +61,6 @@ const experienceData = [
     company: "Freelance",
     date: "Aug. 2020 - Present",
     desc: [
-      <li>
-        Commisioned to develop a custom discord bot for a Minecraft server with
-        2000+ users.
-      </li>,
       <li>
         Dedicated to delivering high-quality, user-friendly and creative
         products whilst maintaining a meticulous <b>attention to detail.</b>
@@ -134,16 +131,16 @@ export const Experience = () => {
     return (
       <div
         key={experience.title}
-        className="text-xl flex flex-row h-[34rem] mx-auto"
+        className="text-sm md:text-xl flex flex-row h-[34rem] mx-auto pl-4"
       >
-        <div className="pr-10 pt-2 uppercase font-extralight w-48">
+        <div className="hidden md:flex pr-10 pt-2 uppercase font-extralight w-48">
           <p>{experience.date}</p>
         </div>
         <motion.div
           variants={heightVariants}
           initial="shrunk"
           animate={controls}
-          className="border-l-2"
+          className="hidden md:block border-l-2"
         ></motion.div>
         <motion.div
           variants={arrowVariants}
@@ -154,17 +151,22 @@ export const Experience = () => {
           <img
             src={arrow}
             width={100}
-            className="self-start min-w-[100px] pt-10"
+            className="hidden md:block self-start min-w-[100px] pt-10"
           ></img>
         </motion.div>
         <div className="flex flex-col max-w-lg pl-10 px-6 py-6">
-          <h4 className="text-4xl tracking-wide">{experience.title}</h4>
+          <h4 className="text-lg md:text-4xl tracking-wide">
+            {experience.title}
+          </h4>
           <p className="uppercase font-light text-gray-400">
             {experience.company}
           </p>
+          <div className="flex md:hidden pr-10 pt-2 uppercase font-extralight text-gray-500 w-48">
+            <p>{experience.date}</p>
+          </div>
           <ul
             className="flex flex-col gap-4 pt-5 font-mono-text font-extralight 
-          text-gray-100 text-lg tracking-tight"
+          text-gray-100 text-sm md:text-lg tracking-tight"
           >
             {experience.desc.map((item, index) => (
               <li key={index}>{item}</li>
@@ -182,9 +184,9 @@ export const Experience = () => {
         ref={ref}
         initial="hidden"
         animate={controls}
-        className="whitespace-nowrap text-5xl font-mono-text text-right"
+        className="whitespace-nowrap text-xl md:text-5xl font-mono-text text-right"
       >
-        <h3 className="py-8 px-24 bg-gradient-to-r from-violet-900 to-blue-800 rounded-full my-32">
+        <h3 className=" mx-4 md:mx-0 py-4 md:py-8 px-8 md:px-24 bg-gradient-to-r from-violet-900 to-blue-800 rounded-full my-32">
           WORK EXPERIENCE
         </h3>
       </motion.div>
