@@ -82,6 +82,18 @@ const HeaderMobile = () => {
           skill.py
         </a>
         <a
+          href="#projects"
+          className="w-48 h-24 flex flex-row justify-center items-center border-b border-neutral-800"
+        >
+          projects.cs
+        </a>
+        <a
+          href="#featured"
+          className="w-48 h-24 flex flex-row justify-center items-center border-b border-neutral-800"
+        >
+          featured.sol
+        </a>
+        <a
           href="#experience"
           className="w-48 h-24 flex flex-row justify-center items-center"
         >
@@ -110,6 +122,18 @@ const HeaderDesktop = () => {
           className="w-48 h-24 flex flex-row justify-center items-center border-r border-neutral-800"
         >
           skill.py
+        </a>
+        <a
+          href="#projects"
+          className="w-48 h-24 flex flex-row justify-center items-center border-r border-neutral-800"
+        >
+          projects.cs
+        </a>
+        <a
+          href="#featured"
+          className="w-48 h-24 flex flex-row justify-center items-center border-r border-neutral-800"
+        >
+          featured.sol
         </a>
         <a
           href="#experience"

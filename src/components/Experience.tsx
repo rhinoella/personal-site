@@ -4,10 +4,32 @@ import { useAnimation, useInView, motion } from "framer-motion";
 
 const experienceData = [
   {
+    title: "Technology Delivery Lead",
+    company: "Blue202 Labs \u00A0 | \u00A0 Part time",
+    date: "Jul. 2023 - Jul. 2024",
+    desc: [
+      <p>
+        <b>Led the software engineering team</b>, overseeing project delivery to
+        ensure quality and meeting of client deadlines. Provided{" "}
+        <b>technical consulting</b> for SMBs and non-technical startup founders
+        to develop and design optimum digital infrastructure.
+      </p>,
+      <p>
+        Created comprehensive project proposals,{" "}
+        <b>
+          outlining development timelines, budgets, and proposing technology
+          stacks
+        </b>
+        . Conducted recruitment and hiring of all employees, facilitating
+        interviews and screening processes.
+      </p>,
+    ],
+  },
+  {
     title: "Scientific Software Developer",
     company:
       "UK Science and Technology Facilities Council \u00A0 | \u00A0 Full time",
-    date: "Jul. 2023 - Present",
+    date: "Jul. 2023 - Jul. 2024",
     desc: [
       <p>
         Collaborating in a team to develop&nbsp;
@@ -36,38 +58,22 @@ const experienceData = [
     ],
   },
   {
-    title: "Software Engineer",
+    title: "Fullstack Developer",
     company: `QED Learning \u00A0 | \u00A0 Part time`,
     date: "Jun. 2023 - May 2024",
     desc: [
       <p>
-        Developing augumented reality, phone-application prototypes for an
-        EdTech startup, applying C#, Unity3D, CAD and IOS development
-        principles.
+        Developing augmented reality, phone-application prototypes for an EdTech
+        startup, applying C#, Unity3D, CAD and IOS development principles.
       </p>,
       <p>
-        <b>Lead the design and development</b> of a modular backend architecture
+        <b>Led the design and development</b> of a modular backend architecture
         and .NET API, providing the foundations for an advanced learning
         platform.
       </p>,
       <p>
         Integrated the API with a GPT agent to perform handwriting recognition
         and mathematical operations.
-      </p>,
-    ],
-  },
-  {
-    title: "Freelance Developer & UI/UX Designer",
-    company: "Freelance",
-    date: "Aug. 2020 - Present",
-    desc: [
-      <p>
-        Dedicated to delivering high-quality, user-friendly and creative
-        products whilst maintaining a meticulous <b>attention to detail.</b>
-      </p>,
-      <p>
-        Designs and develops frontend websites for creative portfolios using
-        JavaScript, TypeScript, HTML, CSS, Vite, React and Tailwind.
       </p>,
     ],
   },
@@ -169,7 +175,7 @@ export const Experience = () => {
           text-gray-100 text-base md:text-lg tracking-tight"
           >
             {experience.desc.map((item, index) => (
-              <p key={index}>{item}</p>
+              <div key={index}>{item}</div>
             ))}
           </ul>
         </div>

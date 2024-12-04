@@ -2,7 +2,7 @@ import noellaPixel from "../assets/noellaPixel.png";
 
 export const About = () => {
   return (
-    <section id="about" className="py-32 -scroll-m-32 md:scroll-m-64">
+    <section id="about" className="py-32 -scroll-m-32 md:scroll-m-32">
       <div className="w-full bg-gradient-to-t md:bg-gradient-to-br from-blue-700 to-background md:to-indigo-950 gap-8 md:gap-20 rounded-3xl p-8 md:p-20 flex flex-col md:flex-row justify-between">
         <div className="flex flex-col w-5/6 xl:text-2xl font-extralight gap-8 w-full">
           <div className="flex flex-col justify-between">
@@ -26,15 +26,15 @@ export const About = () => {
             </div>
           </div>
           <p>
-            A detail-orientated, multi-talented, fullstack Software Engineer
-            dedicated to delivering quality results and innovative solutions.
+            A highly adaptable and skilled leader with a strong background in
+            technology. Experienced in navigating diverse work environments and
+            collaborating with teams and clients from around the world.
             <br></br>
-            <br></br>
-            Driven by passion for computers, I'm proficient in backend
-            development (ASP.NET Core, Node.js), frontend development (React,
-            Qt), developing AWS cloud infrastructure, and have a strong skillset
-            of programming languages (C++, C#, JavaScript, TypeScript, Python,
-            Solidity, SQL).
+            <br></br>I love computers, design and mathematics and positions that
+            challenge me, with extensive startup and software engineering
+            experience. I bring a unique and diverse skillset, providing a
+            strong combination of leadership, communication and technical
+            skills.
           </p>
           <div className="flex flex-row gap-4 xl:gap-8">
             <a

@@ -117,7 +117,7 @@ export const Hero = () => {
               </p>
               <p>
                 &nbsp;&nbsp;<span className="text-slate-600">&#60;li&#62;</span>
-                web developer.
+                entrepreneur.
                 <span className="text-slate-600">&#60;li&#62;</span>
               </p>
               <p>
