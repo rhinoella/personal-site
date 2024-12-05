@@ -37,8 +37,7 @@ export default {
         height: "height",
       },
       backgroundImage: {
-        gradientImage: "url('./src/assets/gradient.png')",
-        stripes: "url('./src/assets/images/movieStripes.png')",
+        stripes: "url('/movieStripes.png')",
       },
       screens: {
         "3xl": "1800px",
