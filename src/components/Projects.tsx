@@ -226,7 +226,7 @@ export const Project = (props: {
     <article
       key={props.id}
       id={`${props.id}`}
-      className={`min-w-[20rem] md:min-w-[50vw] min-h-[30rem] md:max-h-[50vh] bg-gradient-to-br ${props.gradient[0]} ${props.gradient[1]} rounded-3xl p-6 md:p-12 w-full justify-between flex flex-col`}
+      className={`min-w-[20rem] md:min-w-[60%] min-h-[30rem] md:max-h-[50vh] bg-gradient-to-br ${props.gradient[0]} ${props.gradient[1]} rounded-3xl p-6 md:p-12 w-full justify-between flex flex-col`}
       style={{
         transform: `translateX(-${props.inFocus * 100 + 4 * props.inFocus}%)`,
         //        transform: `translateX(-${inFocus * (340 + 32 * inFocus)}px)`,
@@ -238,7 +238,7 @@ export const Project = (props: {
         <div className="text-nowrap">{props.subheading}</div>
       </div>
       <div className="flex flex-col gap-6 items-center xl:items-start h-full">
-        <div className="h-1/2 flex flex-row gap-2 overflow-x-scroll no-scrollbar">
+        <div className="h-3/4 flex flex-row gap-2 overflow-x-scroll no-scrollbar">
           {props.images.map((i) => (
             <img
               key={`img-${i}-${props.id}`}
