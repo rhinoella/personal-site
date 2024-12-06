@@ -30,9 +30,9 @@ export const About = () => {
             technology. Experienced in navigating diverse work environments and
             collaborating with teams and clients from around the world.
             <br></br>
-            <br></br>I love computers, design and mathematics and positions that
-            challenge me, with extensive startup and software engineering
-            experience. I bring a unique and diverse skillset, providing a
+            <br></br>I love computers, design, mathematics and positions that
+            challenge me. With extensive startup and software engineering
+            experience, I bring a unique and diverse skillset, providing a
             strong combination of leadership, communication and technical
             skills.
           </p>
