@@ -122,7 +122,13 @@ export const Hero = () => {
               </p>
               <p>
                 &nbsp;&nbsp;<span className="text-slate-600">&#60;li&#62;</span>
-                killer candidate.
+                killer{" "}
+                {window.innerWidth < 640 && (
+                  <span>
+                    <br></br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                  </span>
+                )}{" "}
+                candidate.
                 <span className="text-slate-600">&#60;li&#62;</span>
               </p>
               <p className="text-slate-600">&#60;&#47;ul&#62;</p>
