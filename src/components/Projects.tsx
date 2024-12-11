@@ -82,7 +82,7 @@ const projectData: ProjectData[] = [
     title: "Swift Website & Branding",
     subheading: "Blue202 Labs | 2024",
     text: `Designed and developed a bespoke website for Swift Distribution using React and Next.js. 
-    Developed a logo, brand identity and design aesthetic that aligned with the client's target images.
+    Developed a logo, brand identity and design aesthetic that aligned with the client's target image.
     Provided a complete hosting solution on AWS.`,
     gradient: ["from-emerald-600", "to-purple-900"],
     images: [swiftLogo, swiftCta, swiftGlobe],
