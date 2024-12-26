@@ -6,7 +6,7 @@ const experienceData = [
   {
     title: "Technology Delivery Lead",
     company: "Blue202 Labs \u00A0 | \u00A0 Part time",
-    date: "Jul. 2023 - Jul. 2024",
+    date: "Jul. 2024 - Dec. 2024",
     desc: [
       <p>
         <b>Led the software engineering team</b>, overseeing project delivery to
